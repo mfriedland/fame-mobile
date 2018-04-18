@@ -9,8 +9,6 @@ const ITEM_WIDTH = Dimensions.get('window').width
 
 class Trending extends Component {
 
-
-
   constructor(props) {
     super(props)
     this.state = {
@@ -19,19 +17,20 @@ class Trending extends Component {
       array: [],
       modalVisible: false,
       id: 2,
+      type: null,
     }
   }
 
-
-_setModalVisible(visible, item) {
+_setModalVisible(visible, item, type) {
+  console.log('type', type, 'item', item)
   if (item) {
     id = item - 1
-    this.setState({ modalVisible: visible, id: id});
+    this.setState({ modalVisible: visible, id: id, type});
   } else  this.setState({ modalVisible: visible })
 }
 
-_renderItem = ({item}) => (
-     <TouchableHighlight id={item.id} onPress={() => this._setModalVisible(true,item.id)} >
+_renderItem = ({item}, type) => (
+    <TouchableHighlight id={item.id} onPress={() => this._setModalVisible(true, item.id, type)} >
        <Image style={styles.trendingImage} source={{ uri: item.image }} />
      </TouchableHighlight>
 )
@@ -53,33 +52,28 @@ _renderItem = ({item}) => (
           <View style={styles.flatlistStyle}>
           <FlatList
               keyExtractor= {(item, index) => index }
-              // numColumns={columns}
               data={musicians}
-              renderItem={this._renderItem}
-                // ({item, index}) => <TouchableHighlight id={item.id} onPress={this._setModalVisible.bind(this)} >
-                //   <Image style={styles.trendingImage} source={{ uri: item.image }} />
-                //   </ TouchableHighlight> }
+              renderItem={(item) => this._renderItem(item, 'musicians')}
             />
           </View>
           <View style={styles.flatlistStyle}>
           <FlatList
             keyExtractor= {(item, index) => index }
-            // numColumns={columns}
             data={dancers}
-            renderItem={this._renderItem}
+            renderItem={(item) => this._renderItem(item, 'dancers')}
             />
           </View>
           <View style={styles.flatlistStyle}>
           <FlatList
             keyExtractor= {(item, index) => index }
-            // numColumns={columns}
             data={models}
-            renderItem={this._renderItem}
-          />
+            renderItem={(item) => this._renderItem(item, 'models')}
+            />
           </View>
         </View>
         <ModalView
             modalVisible={ this.state.modalVisible }
+            type = { this.state.type }
             setModalVisible={ (vis) => { this._setModalVisible(false) }}
             id={ this.state.id }
             style={{display:'flex',height:800, width:800, alignItems: 'center', justifyContent: 'center'}}
@@ -102,7 +96,7 @@ const styles = StyleSheet.create({
   headingTextContainer: {
     // flex: 1,
     // alignItems:'center',
-    marginTop: 45,
+    marginTop: 20,
     justifyContent :'space-between',
     height: 20,
     flexDirection:'row'

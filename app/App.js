@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 import { Alert } from 'react-native'
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
-import { StyleSheet, View, StatusBar, Button } from 'react-native';
+import { View, StatusBar, Button } from 'react-native';
 import firebase from 'firebase';
 import { Spinner } from './components/Spinner'
 import Routes from './screens/Routes';
 import {persistor, store} from './store'
+import styles from './stylesheets'
 console.disableYellowBox = true;
 import registerForNotifications from './services/pushNotifications'
 
@@ -44,7 +45,7 @@ export default class myapp extends Component {
 
     return (
       <Provider store={ store }>
-        <View style={styles.container}>
+        <View style={styles.globalContainer}>
           <PersistGate persistor={persistor}>
             <Routes />
           </PersistGate>
@@ -54,16 +55,6 @@ export default class myapp extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#12092f',
-  },
-  containerLarge: {
-    flexGrow: 12,
-    backgroundColor: '#12092f',
-  },
-});
 
 
 

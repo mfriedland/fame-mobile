@@ -6,6 +6,13 @@ const SWIPE_THRESHOLD = 0.25 * SCREEN_WIDTH;
 const SWIPE_OUT_DURATION = 250;
 
 export const styles = StyleSheet.create({
+  globalContainer: {
+    flex: 1,
+    marginTop: 20,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    backgroundColor: '#12092f',
+  },
   container: {
     flexGrow: 1,
     justifyContent: 'center',
@@ -67,7 +74,7 @@ export const styles = StyleSheet.create({
       justifyContent: 'flex-end',
   },
   deckContainer: {
-    width: SCREEN_WIDTH,
+    width: SCREEN_WIDTH-40,
     flex: 1,
   },
   cardDeckStyle: {
@@ -91,7 +98,8 @@ export const styles = StyleSheet.create({
     elevation: 1,
     marginLeft: 5,
     marginRight: 5,
-    marginTop: 10,
+    marginTop: 40,
+    paddingTop: 20,
     width: .8*SCREEN_WIDTH,
     height: .8*SCREEN_HEIGHT,
     justifyContent: 'center',

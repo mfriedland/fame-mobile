@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FlatList, View, StyleSheet, Button, Dimensions, Image, Text, TouchableHighlight, Modal } from 'react-native';
 import { musicians, dancers, models } from '../../assets/SeedImages'
-// import Video from 'react-native-video'
+import Video from 'react-native-video'
 
 
 export default class ModalView extends Component {
@@ -21,6 +21,8 @@ export default class ModalView extends Component {
   }
 
   render() {
+    console.log(this.props.type)
+    type = this.props.type
     return (
        <Modal
         // animationType="slide"
@@ -31,21 +33,32 @@ export default class ModalView extends Component {
        >
          <View style={styles.modalContainer}>
            <View>
-            {/* <Image
-                style={{flex:1}}
-                source={musicians[0].image} /> */}
             <TouchableHighlight
               onPress={() => { this.props.setModalVisible(false) }}
             >
+            <View style={{height:400, width:400}}>
+            { type === 'musicians' &&
             <Image
-                style={{height:400, width:600}}
+                style={{flex: 1}}
                 source={{uri: musicians[this.props.id].image}} />
+              ||
+              this.props.type === 'dancers' &&
+              <Image
+                  style={{flex: 1}}
+                  source={{uri: dancers[this.props.id].image}} />
+              ||
+             type === 'models' &&
+            <Image
+                style={{flex:1}}
+                source={{uri: models[this.props.id].image}} />
+            }
+            </View>
               {/* <Text>{ musicians[0].image }</Text> */}
               {/* <Video source={{uri: "https://www.youtube.com/watch?v=sULnyRvwHA4"}}   // Can be a URL or a local file.
-                poster="https://baconmockup.com/300/200/" // uri to an image to display until the video plays
-                ref={(ref) => {
-                  this.player = ref
-                }}                                      // Store reference
+                // uri to an image to display until the video plays
+                // ref={(ref) => {
+                //   this.player = ref
+                // }}                                      // Store reference
                 rate={1.0}                              // 0 is paused, 1 is normal.
                 volume={1.0}                            // 0 is muted, 1 is normal.
                 muted={false}                           // Mutes the audio entirely.
@@ -56,7 +69,8 @@ export default class ModalView extends Component {
                 playWhenInactive={false}                // [iOS] Video continues to play when control or notification center are shown.
                 ignoreSilentSwitch={"ignore"}           // [iOS] ignore | obey - When 'ignore', audio will still play with the iOS hard silent switch set to silent. When 'obey', audio will toggle with the switch. When not specified, will inherit audio settings as usual.
                 progressUpdateInterval={250.0}          // [iOS] Interval to fire onProgress (default to ~250ms)
-                style={styles.backgroundVideo} /> */}
+                // style={styles.backgroundVideo}
+                 /> */}
             </TouchableHighlight>
            </View>
          </View>

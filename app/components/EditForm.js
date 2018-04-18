@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Button, Text, View, Image, TextInput, TouchableOpacity} from 'react-native';
-import firebase from 'firebase';
 import { connect } from 'react-redux';
 import { updateUser } from '../reducers/CurrentUser'; //firstNameChanged, lastNameChanged, emailChanged, passwordChanged,
 import { Spinner } from './Spinner'

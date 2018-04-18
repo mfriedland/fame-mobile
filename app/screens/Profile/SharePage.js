@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, TextInput, TouchableOpacity} from 'react-native';
 
 class SharePage extends Component {
-
+  // static navigationOptions = {
+  //   tabBarVisible: false
+  // }
   render() {
     return (
 

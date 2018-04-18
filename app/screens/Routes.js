@@ -10,7 +10,7 @@ import {  NavBar} from './index';
 
 
 let currentUser;
-export class Route extends Component {
+export class Routes extends Component {
   constructor() {
     super()
     this.state = store.getState();
@@ -38,18 +38,11 @@ export class Route extends Component {
 }
 
 
-// <View style={styles.container}>
-//             <MenuBar />
-{/* <View style={styles.container}>
-<NavBar headerText={'Albums'} />
-</View> */}
-
-
 const mapStateToProps = (state) => {
   return { likes: state.Likes }
 }
 
-export default connect(null, {fetchUsers, fetchLikes} )(Route);
+export default connect(null, {fetchUsers, fetchLikes} )(Routes);
 
 
 // const MainNavigator = TabNavigator(

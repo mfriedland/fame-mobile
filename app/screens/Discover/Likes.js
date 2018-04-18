@@ -103,13 +103,3 @@ class Likes extends Component {
 // export default connect(mapStateToProps)(Likes)
 
 export { Likes }
-
-
- {/* <FlatList
-            data={likes}
-            keyExtractor={(x, i) => i}
-            renderItem={this.renderLikes}
-            // renderItem={({ item }) => <View>
-            //   <Image style={{height: 150}} source={{uri: item.image }} />
-            //   </View>}
-          /> */}

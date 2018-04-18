@@ -23,10 +23,10 @@ const Navigator =
     // main: {
       // screen: TabNavigator(
       TabNavigator({
-      welcome: { screen: HomePage}, //, navigationOptions: {tabBarVisible: false}},
-      choose: { screen: ChooseUserType}, //, navigationOptions: {tabBarVisible: false} },
-      signup: { screen: Signup}, //, navigationOptions: {tabBarVisible: false} },
-      login: { screen: Login}, //, navigationOptions: {tabBarVisible: false} },
+      welcome: { screen: HomePage},
+      choose: { screen: ChooseUserType},
+      signup: { screen: Signup},
+      login: { screen: Login},
       main: {
         screen: TabNavigator(
         {
@@ -107,6 +107,8 @@ const Navigator =
               style: {
                 backgroundColor: 'black',
                 height: 40,
+                borderTopColor: 'lightgrey',
+                borderTopWidth: .5,
                   },
             },
             tabBarComponent: TabBarBottom,
@@ -116,12 +118,11 @@ const Navigator =
             lazyLoad: true
         //     labelStyle: { fontSize: 12 }
           },
-      {
-        navigationOptions: {tabBarVisible: false},
-          lazyLoad: true
-       }
     )}
-  })
+  },  {
+    navigationOptions: {tabBarVisible: false},
+      lazyLoad: true
+   })
 
 
 // });
