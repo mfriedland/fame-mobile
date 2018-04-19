@@ -4,11 +4,11 @@ import { FlatList, View, StyleSheet, Button, Dimensions, Image, Text, TouchableH
 import store from '../../store.js'
 import { fetchUsers } from '../../reducers/AllUsers'
 import { ModalView } from '../../components/ModalView'
-import { musicians, dancers, models } from '../../../assets/SeedImages'
+import { musicians, dancers, models, comedians } from '../../../assets/SeedImages'
 const ITEM_WIDTH = Dimensions.get('window').width
+const artists = [ musicians, dancers, models, comedians ]
 
 class Trending extends Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -29,7 +29,7 @@ _setModalVisible(visible, item, type) {
 }
 
 _renderItem = ({item}, type) => (
-    <TouchableHighlight id={item.id} onPress={() => this._setModalVisible(true, item.id, type)} >
+    <TouchableHighlight id={item.id} onPress={() => this._setModalVisible(true, item.id, item.type)} >
        <Image style={styles.trendingImage} source={{ uri: item.image }} />
      </TouchableHighlight>
 )
@@ -48,28 +48,23 @@ _renderItem = ({item}, type) => (
 
         <View style={styles.flatlistContainer}>
 
-          <View style={styles.flatlistStyle}>
-          <FlatList
-              keyExtractor= {(item, index) => index }
-              data={musicians}
-              renderItem={(item) => this._renderItem(item, 'musicians')}
-            />
-          </View>
-          <View style={styles.flatlistStyle}>
           <FlatList
             keyExtractor= {(item, index) => index }
-            data={dancers}
-            renderItem={(item) => this._renderItem(item, 'dancers')}
-            />
+            data={artists}
+            horizontal={true}
+            renderItem={({ item }) => (
+            <View style={styles.flatlistStyle}>
+              <FlatList
+                  keyExtractor= {(item, index) => index }
+                  data={item}
+                  renderItem={(item) => this._renderItem(item, 'musicians')}
+
+                />
+            </View>
+             )}
+          />
           </View>
-          <View style={styles.flatlistStyle}>
-          <FlatList
-            keyExtractor= {(item, index) => index }
-            data={models}
-            renderItem={(item) => this._renderItem(item, 'models')}
-            />
-          </View>
-        </View>
+
         <ModalView
             modalVisible={ this.state.modalVisible }
             type = { this.state.type }
@@ -129,6 +124,27 @@ const styles = StyleSheet.create({
   }
 })
 
+ // <View style={styles.flatlistStyle}>
+          // <FlatList
+          //     keyExtractor= {(item, index) => index }
+          //     data={musicians}
+          //     renderItem={(item) => this._renderItem(item, 'musicians')}
+          //   />
+          // </View>
+          // <View style={styles.flatlistStyle}>
+          // <FlatList
+          //   keyExtractor= {(item, index) => index }
+          //   data={dancers}
+          //   renderItem={(item) => this._renderItem(item, 'dancers')}
+          //   />
+          // </View>
+          // <View style={styles.flatlistStyle}>
+          // <FlatList
+          //   keyExtractor= {(item, index) => index }
+          //   data={models}
+          //   renderItem={(item) => this._renderItem(item, 'models')}
+          //   />
+          // </View>
 
 //  <Button
 //       onPress={() => {

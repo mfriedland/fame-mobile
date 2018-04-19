@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FlatList, View, StyleSheet, Button, Dimensions, Image, Text, TouchableHighlight, Modal } from 'react-native';
-import { musicians, dancers, models } from '../../assets/SeedImages'
+import { musicians, dancers, models, comedians } from '../../assets/SeedImages'
 import Video from 'react-native-video'
 
 
@@ -50,6 +50,11 @@ export default class ModalView extends Component {
             <Image
                 style={{flex:1}}
                 source={{uri: models[this.props.id].image}} />
+              ||
+             type === 'comedians' &&
+            <Image
+                style={{flex:1}}
+                source={{uri: comedians[this.props.id].image}} />
             }
             </View>
               {/* <Text>{ musicians[0].image }</Text> */}
