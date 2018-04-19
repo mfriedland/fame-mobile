@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column',
     // marginTop: 100,
-    backgroundColor: '#12092f',
+    backgroundColor: '#180b42',
   },
   row: {
     flexDirection: 'row',

@@ -9,8 +9,9 @@ const Card = (props) => {
   return (
     <View style={styles.deckCardStyle}>
       {props.children}
-      <Image style={{width:SCREEN_WIDTH-30, height: SCREEN_HEIGHT-120}} source={props.image} />
-         </View>
+      <Image style={{width:SCREEN_WIDTH-60, height: SCREEN_HEIGHT-120}} source={props.image} />
+      {/* <Image style={{width: 200, height: 200}} source={props.image} /> */}
+    </View>
   );
 };
 

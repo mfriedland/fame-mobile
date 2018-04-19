@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import { HomePage, ChooseUserType, Login, Signup, Trending, SharePage, Profile, EditProfile, Discover, Likes, NavBar, MenuBar} from './index';
+import { HomePage, ChooseUserType, Login, Signup, Trending, SharePage, Profile, EditProfile, Discover, Competition, Likes, NavBar, MenuBar} from './index';
 import {View, StyleSheet, Image, Button } from 'react-native'
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
+
 
 
 
@@ -38,6 +39,8 @@ const Navigator =
                 headerStyle: {
                   backgroundColor: '#12092f',
                   tintColor:'rgb(252,197,76)',
+                  height: 25,
+                  paddingBottom: 8,
                 },
                 headerRight: <Button title='Edit' color='white' onPress={() => navigation.navigate('editProfile')} />,
                 headerLeft: <Button title='Share' color='white' onPress={() => navigation.navigate('share')} />,
@@ -48,6 +51,8 @@ const Navigator =
                 headerStyle: {
                   backgroundColor: '#12092f',
                   tintColor:'white',
+                  height: 25,
+                  paddingBottom: 8,
                 }
               }),
             },
@@ -55,6 +60,8 @@ const Navigator =
                 headerStyle: {
                   backgroundColor: '#12092f',
                   tintColor:'rgb(252,197,76)',
+                  height: 28,
+                  paddingBottom: 10,
                 }
               }),
             },
@@ -67,6 +74,7 @@ const Navigator =
                   headerStyle: {
                     backgroundColor: '#12092f',
                     tintColor:'rgb(252,197,76)',
+                    height: 28,
                   },
                   headerRight: <Button title='Likes' color='white' onPress={() => navigation.navigate('likes')} />,
                   headerTintColor: 'rgb(252,197,76)',
@@ -82,15 +90,24 @@ const Navigator =
             })
           },
           trending: { screen: Trending },
-
+          competition: { screen: Competition, navigationOptions: ({ navigation }) => ({
+            title: 'Competition',
+            headerStyle: {
+              backgroundColor: '#12092f',
+              tintColor:'rgb(252,197,76)',
+              height: 25,
+              paddingBottom: 8,
+              },
+            }),
+          },
         },
         {
           navigationOptions: ({ navigation }) => ({
           tabBarIcon: ({ focused, tintColor }) => {
             const { routeName } = navigation.state;
             let iconName;
-            if (routeName === 'home') {
-              iconName = require('../../assets/MenuBar/home.png');
+            if (routeName === 'competition') {
+              iconName = require('../../assets/MenuBar/stage.png');
             } else if (routeName === 'explore') {
               iconName = require('../../assets/MenuBar/discover.png');
             } else if (routeName === 'trending') {

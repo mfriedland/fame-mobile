@@ -1,16 +1,14 @@
-import Expo, { Notifications } from 'expo';
 import React, { Component } from 'react';
 import { Alert } from 'react-native'
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
-import { View, StatusBar, Button } from 'react-native';
+import { View, StatusBar } from 'react-native';
 import firebase from 'firebase';
-import { Spinner } from './components/Spinner'
 import Routes from './screens/Routes';
 import {persistor, store} from './store'
 import styles from './stylesheets'
 console.disableYellowBox = true;
-import registerForNotifications from './services/pushNotifications'
+// import registerForNotifications from './services/pushNotifications'
 
 export default class myapp extends Component {
 

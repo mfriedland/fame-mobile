@@ -11,7 +11,6 @@ class EditProfile extends Component {
   constructor() {
     super()
     this.state = store.getState();
-
   }
 
   componentDidMount () {
@@ -25,7 +24,6 @@ class EditProfile extends Component {
   render() {
     user = this.state.CurrentUser
 
-    // console.log('editprofile', this.props.user, this.props.userId)
     return (
       <View style={styles.containerNoGrow}>
           <EditForm type="edit" user={user} userId={user.id} />
@@ -35,9 +33,7 @@ class EditProfile extends Component {
 }
 
 const mapStateToProps = (state) => {
-
   return { user: state.CurrentUser }
-
 };
 
 // const mapDispatch = dispatch => ({

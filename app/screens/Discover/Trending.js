@@ -22,7 +22,6 @@ class Trending extends Component {
   }
 
 _setModalVisible(visible, item, type) {
-  console.log('type', type, 'item', item)
   if (item) {
     id = item - 1
     this.setState({ modalVisible: visible, id: id, type});
@@ -89,7 +88,7 @@ export { Trending };
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#12092f',
+    backgroundColor: '#180b42',
     justifyContent: 'flex-end',
     alignItems: 'center',
 },

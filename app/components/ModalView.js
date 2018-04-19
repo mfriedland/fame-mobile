@@ -21,7 +21,6 @@ export default class ModalView extends Component {
   }
 
   render() {
-    console.log(this.props.type)
     type = this.props.type
     return (
        <Modal

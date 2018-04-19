@@ -28,11 +28,10 @@ export class Routes extends Component {
   render() {
     return(
       <View style={styles.mainNavigatorFullContainer}>
-
-      <View style={styles.mainNavigatorContainer}>
-        <Navigator />
+        <View style={styles.mainNavigatorContainer}>
+          <Navigator />
+        </View>
       </View>
-    </View>
     )
   }
 }

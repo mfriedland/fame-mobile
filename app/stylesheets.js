@@ -11,19 +11,19 @@ export const styles = StyleSheet.create({
     marginTop: 20,
     // justifyContent: 'center',
     // alignItems: 'center',
-    backgroundColor: '#12092f',
+    backgroundColor: '#180b42',
   },
   container: {
     flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#12092f',
+    backgroundColor: '#180b42',
   },
   containerNoGrow: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#12092f',
+    backgroundColor: '#180b42',
   },
   mainNavigatorFullContainer: {
     flex: 1
@@ -75,7 +75,7 @@ export const styles = StyleSheet.create({
   },
   deckContainer: {
     width: SCREEN_WIDTH-40,
-    flex: 1,
+    // flex: 1,
   },
   cardDeckStyle: {
     position: 'absolute',
@@ -104,7 +104,7 @@ export const styles = StyleSheet.create({
     height: .8*SCREEN_HEIGHT,
     justifyContent: 'center',
     alignItems: 'center',
-    flex: 1,
+    // flex: 1,
   },
   signupNavigateTextContainer: {
     flexGrow: 1,

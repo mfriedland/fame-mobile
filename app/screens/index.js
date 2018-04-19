@@ -8,6 +8,7 @@ export * from './SetUp/Login.js';
 export * from './Discover/Trending';
 export * from './Discover/Discover';
 export * from './Discover/Likes';
+export * from './Discover/Competition';
 
 //PROFILE
 export * from './Profile/Profile';
