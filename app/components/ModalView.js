@@ -55,6 +55,11 @@ export default class ModalView extends Component {
             <Image
                 style={{flex:1}}
                 source={{uri: comedians[this.props.id].image}} />
+              ||
+             type === 'magicians' &&
+            <Image
+                style={{flex:1}}
+                source={{uri: magicians[this.props.id].image}} />
             }
             </View>
               {/* <Text>{ musicians[0].image }</Text> */}

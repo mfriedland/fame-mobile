@@ -3,7 +3,6 @@
 let musicians = [
   {id: 1, image: 'https://consequenceofsound.files.wordpress.com/2016/02/radiohead.jpg?quality=80&w=807', video: "https://www.youtube.com/watch?v=sULnyRvwHA4", type: 'musicians'},
   {id: 2, image: 'https://images.huffingtonpost.com/2016-04-22-1461291980-2515978-biggiesmallsghost1-thumb.jpg', type: 'musicians'},
-
   {id: 3, image: 'https://www.grammy.com/sites/com/files/styles/image_landscape_hero/public/justinbieber-hero-498329920.jpg?itok=03MYx1T4', type: 'musicians'},
   {id: 4, image: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMjAwNTE2MDMyMl5BMl5BanBnXkFtZTgwMjAyODM3MTI@._V1_UY317_CR12,0,214,317_AL_.jpg', type: 'musicians'},
   {id: 5, image: 'https://img.discogs.com/RMXyQsOaqhmlA6zyUolMYn_PnLk=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-151199-1511818392-3093.jpeg.jpg', type: 'musicians'},
@@ -39,10 +38,9 @@ let models = [
   {id: 4, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_SVAYzJs8LtPTfAl4a0eB-vCg985aot1r_O9o8_eh2ydTp58-', type: 'models'},
   {id:5, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtFUiS97Iw50T9bGxBf-1YA58qKB4ZIexY0KfkJZE6HHWlZfc3Hg', type: 'models'},
   {id: 6, image: 'https://images.askmen.com/1080x540/2017/04/04-051814-top_models_reveal_the_dream_dates_they_want_to_be_taken_on.jpg', type: 'models'},
-  {id: 7, image: 'http://indiainfodesk.in/wp-content/uploads/2017/11/Download-Top-indian-models-photos-deepika-padukone.jpg', type: 'models'},
   {id: 8, image: 'https://lh6.googleusercontent.com/-lI9fL6G0YJw/T6z7VcVwjGI/AAAAAAAAAv8/m65VoavPei0/w506-h387/nouveaux-top-models-victorias-secret-L-1.jpeg', type: 'models'},
   {id: 9, image: 'https://www.wonderslist.com/wp-content/uploads/2015/11/Highest-Paid-Models-Kendall-Jenner.jpg', type: 'models'},
-  {id: 10, image: 'https://vz.cnwimg.com/thumbc-300x300/wp-content/uploads/2013/04/Dani-Evans-1.jpg', type: 'models'},
+  {id: 7, image: 'https://vz.cnwimg.com/thumbc-300x300/wp-content/uploads/2013/04/Dani-Evans-1.jpg', type: 'models'},
 ]
 
 let comedians = [
@@ -55,5 +53,12 @@ let comedians = [
   {id: 7, image: 'https://jennylovescomedy.files.wordpress.com/2011/04/chelseaperetti_07_jimmuise.jpg?w=1278&h=852', type: 'comedians'},
 ]
 
+let magicians = [
+  {id:1, image: 'https://www.dailynews.com/wp-content/uploads/migration/2013/201309/NEWS_130919573_AR_0_1.jpg?w=535', type: 'magicians'},
+  {id: 2, image: 'http://hwst.ellusionist.com/blog/darcy2.jpg', type: 'magicians'},
+  {id: 3, image: 'http://i.dailymail.co.uk/i/pix/2014/05/26/article-2639124-1E347A5500000578-552_634x487.jpg', type: 'magicians'},
+  {id: 4, image: 'https://cdn-jarvis-fun.9cache.com/media/photo/p0W05Ed0G_1200w_v1.jpg', type: 'magicians'},
+  {id:5, image: 'http://www.magicorum.com/shops/images/products/2552', type: 'magicians'},
+]
 
-export { musicians, dancers, models, comedians }
+export { musicians, dancers, models, comedians, magicians }

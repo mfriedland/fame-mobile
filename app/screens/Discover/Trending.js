@@ -4,10 +4,10 @@ import { FlatList, View, StyleSheet, Button, Dimensions, Image, Text, TouchableH
 import store from '../../store.js'
 import { fetchUsers } from '../../reducers/AllUsers'
 import { ModalView } from '../../components/ModalView'
-import { musicians, dancers, models, comedians } from '../../../assets/SeedImages'
+import { musicians, dancers, models, comedians, magicians } from '../../../assets/SeedImages'
 const ITEM_WIDTH = Dimensions.get('window').width
-const artists = [ musicians, dancers, models, comedians ]
-
+const artists = [ musicians, dancers, models, comedians, magicians ]
+let artistsIndex= -1
 class Trending extends Component {
   constructor(props) {
     super(props)
@@ -18,14 +18,30 @@ class Trending extends Component {
       modalVisible: false,
       id: 2,
       type: null,
+      artists: artists,
     }
   }
 
+componentDidMount() {
+  this.setState({artists})
+}
 _setModalVisible(visible, item, type) {
   if (item) {
     id = item - 1
     this.setState({ modalVisible: visible, id: id, type});
   } else  this.setState({ modalVisible: visible })
+}
+
+_renderHeader = () => {
+  artistsIndex++
+  if (artistsIndex > -1 && artistsIndex < 5) console.log(this.state.artists[artistsIndex][artistsIndex].type,artistsIndex)
+  return (
+  <View style={{height:30, alignItems: 'center', justifyContent: 'center'}}>
+  {artistsIndex < artists.length &&
+    <Text style={styles.text}> {this.state.artists[artistsIndex][0].type} </Text>
+  }
+  </View>
+  )
 }
 
 _renderItem = ({item}, type) => (
@@ -40,11 +56,6 @@ _renderItem = ({item}, type) => (
 
     return (
       <View style={styles.container}>
-        <View style={styles.headingTextContainer}>
-            <Text style={styles.headingText}> Musicians </Text>
-            <Text style={styles.headingText}> Dancers </Text>
-            <Text style={styles.headingText}> Models </Text>
-        </View>
 
         <View style={styles.flatlistContainer}>
 
@@ -58,7 +69,7 @@ _renderItem = ({item}, type) => (
                   keyExtractor= {(item, index) => index }
                   data={item}
                   renderItem={(item) => this._renderItem(item, 'musicians')}
-
+                  ListHeaderComponent={this._renderHeader()}
                 />
             </View>
              )}
@@ -121,7 +132,13 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     marginTop: 10,
-  }
+  },
+  text: {
+    fontSize: 16,
+    color: 'rgb(252,197,76)',
+    fontWeight: '700',
+    paddingTop: 10,
+},
 })
 
  // <View style={styles.flatlistStyle}>
